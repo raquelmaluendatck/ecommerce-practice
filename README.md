@@ -45,6 +45,72 @@ El proyecto simula una tienda online de teléfonos móviles con las siguientes f
 
 Una vez desplegado, podrás acceder a la demo en: `https://[tu-usuario].github.io/nombre-del-repositorio/`
 
+## Implementación de Analytics (Google Tag Manager y GA4)
+
+Esta sección describe cómo implementar el seguimiento de eventos de comercio electrónico utilizando Google Tag Manager (GTM) y Google Analytics 4 (GA4).
+
+### Guía de Etiquetado
+
+Se deben identificar los siguientes eventos clave:
+
+- **Vista de producto (product_view):** Cuando un usuario ve la página de un producto.
+- **Añadir al carrito (add_to_cart):** Cuando un usuario añade un producto al carrito.
+- **Eliminar del carrito (remove_from_cart):** Cuando un usuario elimina un producto del carrito.
+- **Iniciar proceso de pago (begin_checkout):** Cuando un usuario inicia el proceso de checkout.
+- **Compra completada (purchase):** Cuando un usuario completa una compra.
+
+### Implementación de `dataLayer.push()`
+
+Ejemplo básico de cómo implementar un evento de dataLayer:
+
+```javascript
+// Ejemplo de evento de añadir al carrito
+dataLayer.push({
+  'event': 'add_to_cart',
+  'ecommerce': {
+      'items': [{
+          'item_id': 'S20',
+          'item_name': 'Samsung S20',
+          'price': 1100,
+          'quantity': 1
+      }]
+  }
+});
+```
+
+### Configuración de Google Tag Manager (GTM)
+
+Ya existe un archivo `config.js` con la configuración del ID de GTM:
+
+```javascript
+const config = {
+ gtmId: 'GTM-XXXXX'  // ID de GTM a reemplazar con el ID real
+};
+
+export default config;
+```
+
+### Implementación en Google Analytics 4 (GA4)
+
+Sigue estos pasos para configurar GA4:
+
+1. Crea una propiedad en GA4.
+2. Conecta GTM con GA4.
+3. Crea las siguientes configuraciones en GTM:
+* Tag de configuración de GA4.
+* Tags para cada evento de ecommerce.
+* Triggers basados en los eventos del `dataLayer`.
+* Variables personalizadas para capturar datos del `dataLayer`.
+
+### Testing
+
+Realiza las siguientes pruebas para verificar la implementación:
+
+1. Verifica los eventos en la consola del navegador.
+2. Verifica los eventos en GTM Preview.
+3. Verifica los eventos en GA4 DebugView.
+4. Verifica los informes en GA4.
+
 ## Contribuir
 
 Las contribuciones son bienvenidas. Siéntete libre de abrir issues o pull requests para mejorar este proyecto.
