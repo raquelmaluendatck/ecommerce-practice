@@ -38,7 +38,7 @@ El proyecto simula una tienda online de teléfonos móviles con las siguientes f
 1. **Configurar GitHub Pages:**
 
 - Ve a la configuración de tu repositorio forkeado en GitHub.
-- En la sección "Pages", selecciona la rama `main` y la carpeta `/root` para desplegar.
+- En la sección "Pages", selecciona la rama `master` y la carpeta `/root` para desplegar.
 - Guarda los cambios y espera unos minutos hasta que la página esté disponible.
 
 2. **Acceder a la demo:**
