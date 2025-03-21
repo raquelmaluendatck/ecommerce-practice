@@ -88,20 +88,50 @@ Se deben identificar los siguientes eventos clave:
 
 ### Implementación de `dataLayer.push()`
 
-Ejemplo básico de cómo implementar un evento de dataLayer:
+En este proyecto encontrarás ejemplos de implementación de eventos para GA4 ya preparados pero comentados. Para utilizarlos, simplemente necesitas descomentarlos.
+
+#### Evento de Página Vista (page_view)
+
+En el archivo `app.js` encontrarás un ejemplo comentado de cómo implementar el evento de página vista:
+
+```javascript
+// EVENTO DE PÁGINA VISTA (PAGE_VIEW)
+// Descomenta este código para implementar el evento de página vista
+// Este evento se dispara cuando el usuario carga la página principal
+/*
+document.addEventListener('DOMContentLoaded', function() {
+dataLayer.push({
+  'event': 'page_view',
+  'page_title': document.title,
+  'page_location': window.location.href,
+  'page_path': window.location.pathname,
+  'language': navigator.language
+});
+});
+*/
+```
+Este evento utiliza los parámetros recomendados por GA4:
+- `page_title`: El título de la página
+- `page_location`: La URL completa
+- `page_path`: La ruta de la URL
+- `language`: El idioma del navegador
+
+#### Otros Eventos de Ecommerce
+
+Ejemplo básico de cómo implementar un evento de añadir al carrito:
 
 ```javascript
 // Ejemplo de evento de añadir al carrito
 dataLayer.push({
-  'event': 'add_to_cart',
-  'ecommerce': {
-      'items': [{
-          'item_id': 'S20',
-          'item_name': 'Samsung S20',
-          'price': 1100,
-          'quantity': 1
-      }]
-  }
+'event': 'add_to_cart',
+'ecommerce': {
+    'items': [{
+        'item_id': 'S20',
+        'item_name': 'Samsung S20',
+        'price': 1100,
+        'quantity': 1
+    }]
+}
 });
 ```
 
