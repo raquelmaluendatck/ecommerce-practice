@@ -49,6 +49,33 @@ Una vez desplegado, podrás acceder a la demo en: `https://[tu-usuario].github.i
 
 Esta sección describe cómo implementar el seguimiento de eventos de comercio electrónico utilizando Google Tag Manager (GTM) y Google Analytics 4 (GA4).
 
+### Implementación de Google Tag Manager
+
+Para implementar GTM en el sitio web, debes añadir dos fragmentos de código en cada página HTML:
+
+1. **Código en el `<head>` de cada página:**
+ - Busca los comentarios `<!-- AQUÍ DEBE IR EL SCRIPT DE GOOGLE TAG MANAGER (parte del head) -->` en cada archivo HTML.
+ - Entre estos comentarios, añade el siguiente código (reemplazando GTM-XXXX con tu ID de GTM):
+
+```html
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXX');</script>
+```
+
+2. **Código justo después de la apertura del `<body>` de cada página:**
+ - Busca los comentarios `<!-- AQUÍ DEBE IR EL NOSCRIPT DE GOOGLE TAG MANAGER (parte del body) -->` en cada archivo HTML.
+ - Entre estos comentarios, añade el siguiente código (reemplazando GTM-XXXX con tu ID de GTM):
+
+```html
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+```
+
+
+
 ### Guía de Etiquetado
 
 Se deben identificar los siguientes eventos clave:
@@ -78,17 +105,6 @@ dataLayer.push({
 });
 ```
 
-### Configuración de Google Tag Manager (GTM)
-
-Ya existe un archivo `config.js` con la configuración del ID de GTM:
-
-```javascript
-const config = {
- gtmId: 'GTM-XXXXX'  // ID de GTM a reemplazar con el ID real
-};
-
-export default config;
-```
 
 ### Implementación en Google Analytics 4 (GA4)
 
