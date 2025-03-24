@@ -90,6 +90,20 @@ window.dataLayer = window.dataLayer || [];
 -->
 ```
 
+- Descomenta estas líneas para activar el dataLayer.
+- **Importante**: Esta inicialización debe colocarse antes del script de GTM para que esté disponible cuando GTM se cargue.
+
+2. **¿Por qué es necesario?**
+- El dataLayer debe inicializarse como un array vacío si no existe.
+- La línea `window.dataLayer = window.dataLayer || [];` crea el array si no existe o utiliza el existente.
+- Todas las interacciones y eventos que queramos rastrear se enviarán a este array mediante el método `dataLayer.push()`.
+
+3. **Orden de implementación recomendado**:
+- Primero: Inicializar el dataLayer
+- Segundo: Implementar el script de GTM en el head
+- Tercero: Implementar el noscript de GTM en el body
+- Cuarto: Implementar los eventos con dataLayer.push()
+
 
 ### Guía de Etiquetado
 
