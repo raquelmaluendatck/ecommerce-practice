@@ -1,0 +1,302 @@
+/* Estilos generales */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --card-bg: #34495e;
+    --hover-effect: rgba(52, 152, 219, 0.2);
+   }
+   
+   body {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding-bottom: 60px;
+   }
+
+   h1, h2, h3, h4, h5, h6,
+   .card-title, .card-text {
+    text-align: center !important;
+   }
+
+   h1.text-center {
+    display: block !important;
+    width: 100%;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+   }
+
+   h1.text-center:after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 3px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+   }
+
+   .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-bg);
+    margin-bottom: 20px;
+   }
+   
+   .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   }
+   
+   .card-body {
+    padding: 1.5rem;
+    text-align: center;
+   }
+   
+   .card-title {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+   }
+   
+   .card-text {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+   }
+  
+   .btn {
+    padding: 10px 20px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    min-width: 100px;
+   }
+   
+   .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+   }
+   
+   .btn:hover::before {
+    left: 100%;
+   }
+   
+   .btn-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+   }
+   
+   .btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9, #1c6ea4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   }
+   
+   .btn-danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+   }
+   
+   .btn-danger:hover {
+    background: linear-gradient(135deg, #c0392b, #a33025);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+   }
+ 
+   .card-body button.btn {
+    margin: 0 3px;
+    min-width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+   }
+ 
+   .mt-auto, .card-body > div:last-child {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   }
+
+   #cart-count {
+    font-size: 0.8rem;
+    font-weight: bold;
+   }
+   
+   .position-fixed.top-0.end-0 button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #3498db, #2980b9);
+   }
+   
+   .position-fixed.top-0.end-0 button:hover {
+    background: linear-gradient(135deg, #2980b9, #1c6ea4);
+   }
+
+   #check-cart .card {
+    width: 300px !important;
+    margin: 15px;
+   }
+   
+   #total-amount {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    width: 100%;
+    display: block;
+   }
+
+   .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+   }
+   
+   .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    color: var(--text-light);
+   }
+   
+   .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+   }
+
+   .thankyou-page {
+    text-align: center;
+    padding: 50px 20px;
+   }
+   
+   .thankyou-page h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+   }
+   
+   .thankyou-page p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+   }
+
+   footer {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+   }
+   
+   footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+   }
+   
+   footer a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+   }
+   
+   @media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        min-width: 80px;
+    }
+    
+    #total-amount {
+        font-size: 1.5rem;
+    }
+   }
+   
+   @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+   }
+   
+   .card {
+    animation: fadeIn 0.5s ease-out forwards;
+   }
+   
+   .quantity-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+   }
+   
+   .quantity-controls .btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    min-width: unset; 
+   }
+   
+   .card h3, .card h5 {
+    text-align: center !important;
+    width: 100%;
+    display: block;
+   }
+   
+   .text-center.m-5 .btn {
+    padding: 12px 24px;
+    min-width: 140px;
+   }
+   
+   #payment-form .btn {
+    padding: 12px 24px;
+    min-width: 140px;
+   }
