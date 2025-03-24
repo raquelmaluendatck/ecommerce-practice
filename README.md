@@ -74,6 +74,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ```
 
+### Inicialización del dataLayer
+
+El dataLayer es un objeto JavaScript que actúa como una capa de datos entre tu sitio web y Google Tag Manager. Es esencial para enviar información estructurada a GTM.
+
+Para implementar el dataLayer:
+
+1. **Inicializa el dataLayer en cada página HTML**:
+- Busca el siguiente bloque comentado en cada archivo HTML:
+```html
+<!-- 
+<script>
+window.dataLayer = window.dataLayer || [];
+</script>
+-->
+```
 
 
 ### Guía de Etiquetado
