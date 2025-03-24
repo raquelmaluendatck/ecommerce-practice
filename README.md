@@ -186,6 +186,26 @@ Realiza las siguientes pruebas para verificar la implementación:
 3. Verifica los eventos en GA4 DebugView.
 4. Verifica los informes en GA4.
 
+### Tutorial Interactivo
+
+Este proyecto incluye un tutorial interactivo que guía paso a paso en la implementación de Google Tag Manager y Google Analytics 4:
+
+1. **Iniciar el tutorial**:
+  - Haz clic en el botón "Iniciar Tutorial" que aparece en la esquina inferior derecha de la página.
+
+2. **Seguir los pasos**:
+  - El tutorial te guiará a través de 7 pasos, desde la inicialización del dataLayer hasta la verificación de la implementación.
+  - Cada paso incluye explicaciones detalladas y ejemplos de código.
+
+3. **Elementos resaltados**:
+  - El tutorial resaltará automáticamente los elementos relevantes de la página para ayudarte a identificar dónde realizar los cambios.
+
+4. **Navegación**:
+  - Utiliza los botones "Anterior" y "Siguiente" para moverte entre los pasos del tutorial.
+  - Puedes cerrar el tutorial en cualquier momento haciendo clic en el botón "×" en la esquina superior derecha.
+
+Este tutorial está diseñado para ser accesible para personas con conocimientos básicos de programación, centrándose en los conceptos de analítica web y la implementación práctica de GTM y GA4.
+
 ## Contribuir
 
 Las contribuciones son bienvenidas. Siéntete libre de abrir issues o pull requests para mejorar este proyecto.
