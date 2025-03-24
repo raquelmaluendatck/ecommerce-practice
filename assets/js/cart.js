@@ -1,15 +1,15 @@
-let div = document.querySelector('#check-cart');
-let getItem = JSON.parse(localStorage.getItem('CartItem'));
-let totalAmount = document.querySelector('#total-amount');
-const buyBtn = document.getElementById('buy-btn');
+let div = document.querySelector("#check-cart");
+let getItem = JSON.parse(localStorage.getItem("CartItem"));
+let totalAmount = document.querySelector("#total-amount");
+const buyBtn = document.getElementById("buy-btn");
 
 function render() {
-div.innerHTML = ''; 
-let total = 0;
+  div.innerHTML = "";
+  let total = 0;
 
-if (getItem != null && getItem.length > 0) {
+  if (getItem != null && getItem.length > 0) {
     for (let i = 0; i < getItem.length; i++) {
-        div.innerHTML += `
+      div.innerHTML += `
         <div class="card mt-4 rounded-sm bg-dark text-white border border-white " style="width: 18rem;">
             <div class="card-body">
                 <h3 class="card-title">Brand : ${getItem[i].brand}</h3>
@@ -27,42 +27,42 @@ if (getItem != null && getItem.length > 0) {
             </div>
         </div> <br>
         `;
-        total += getItem[i].price * getItem[i].quantity;
+      total += getItem[i].price * getItem[i].quantity;
     }
-}
-totalAmount.textContent = `Total: $${total}`;
+  }
+  totalAmount.textContent = `Total: $${total}`;
 }
 
 render();
 
 function deleteItem(index) {
-getItem.splice(index, 1);
-localStorage.setItem('CartItem', JSON.stringify(getItem));
-render();
+  getItem.splice(index, 1);
+  localStorage.setItem("CartItem", JSON.stringify(getItem));
+  render();
 }
 
 function lessQuantity(index) {
-if (getItem[index].quantity <= 1) {
+  if (getItem[index].quantity <= 1) {
     deleteItem(index);
-} else {
+  } else {
     getItem[index].quantity -= 1;
-    localStorage.setItem('CartItem', JSON.stringify(getItem));
+    localStorage.setItem("CartItem", JSON.stringify(getItem));
     render();
-}
+  }
 }
 
 function addQuantity(index) {
-getItem[index].quantity += 1;
-localStorage.setItem('CartItem', JSON.stringify(getItem));
-render();
+  getItem[index].quantity += 1;
+  localStorage.setItem("CartItem", JSON.stringify(getItem));
+  render();
 }
 
 window.deleteItem = deleteItem;
 window.addQuantity = addQuantity;
 window.lessQuantity = lessQuantity;
 
-buyBtn.addEventListener('click', () => {
-window.location.href = 'payment.html';
+buyBtn.addEventListener("click", () => {
+  window.location.href = "payment.html";
 });
 
 render();
