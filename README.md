@@ -152,16 +152,23 @@ Ejemplo básico de cómo implementar un evento de añadir al carrito:
 ```javascript
 // Ejemplo de evento de añadir al carrito
 dataLayer.push({
-'event': 'add_to_cart',
-'ecommerce': {
-    'items': [{
-        'item_id': 'S20',
-        'item_name': 'Samsung S20',
-        'price': 1100,
-        'quantity': 1
-    }]
-}
-});
+    'event': 'add_to_cart',
+    'ecommerce': {
+        'items': [{
+            'item_id': phones[index].model,
+            'item_name': `${phones[index].brand} ${phones[index].model}`,
+            'price': phones[index].price,
+            'quantity': phones[index].quantity,
+            'item_brand': phones[index].brand,
+            'item_category': 'Smartphones',
+            'item_variant': `${phones[index].ram}GB RAM, ${phones[index].rom}GB ROM`,
+            'item_specs': {
+                'camera': phones[index].camera,
+                'ram': phones[index].ram,
+                'rom': phones[index].rom
+            }
+        }]
+    },});
 ```
 
 
