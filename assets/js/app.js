@@ -124,9 +124,7 @@ function addTocart(index) {
     arr.push(phones[index]);
   }
   cartCount++;
-  document.getElementById("cart-count").textContent = cartCount;
-  console.log(arr);
-}
+  }
 
 function checkCart() {
   localStorage.setItem("CartItem", JSON.stringify(arr));
