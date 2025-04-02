@@ -30,7 +30,21 @@
     <!-- AQUÍ DEBE IR EL NOSCRIPT DE GOOGLE TAG MANAGER (parte del body) -->
 
     <!-- ======================================================================= -->
-    <h1 class="text-center text-white mt-3">Cart Items</h1>
+    <script type="text/javascript">
+      var utag_data = {
+        tealium_event : "" // 
+      }
+      </script>
+      
+      <!-- Loading script asynchronously -->
+      <script type="text/javascript">
+          (function(a,b,c,d){
+          a='https://tags.tiqcdn.com/utag/the-cocktail/test-tck/prod/utag.js';
+          b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+          a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+          })();
+      </script>
+      <h1 class="text-center text-white mt-3">Cart Items</h1>
 
     <div
       class="d-flex gap-3 flex-wrap justify-content-center"
